@@ -3,13 +3,6 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/app/travis/build/
-permissions:
-  - object: Scripts
-    pattern: "**"
-    owner: ec2-user
-    mode: 755
-    type:
-      - file
 hooks:
   AfterInstall:
     - location: Scripts/execute-deploy.sh

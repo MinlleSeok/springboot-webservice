@@ -19,6 +19,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
+  - chmod +x ./Scripts/execute-deploy.sh
   - zip -r springboot-calendar *
   - mkdir -p deploy
   - mv springboot-calendar.zip deploy/springboot-calendar.zip
