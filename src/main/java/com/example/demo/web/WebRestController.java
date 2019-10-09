@@ -1,8 +1,10 @@
 package com.example.demo.web;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.core.env.Environment;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ public class WebRestController {
 	
 	private PostsService postsService;
 	private CalendarService calendarService;
+	private Environment env;
 	
 	/*
 	@GetMapping("/greeting")
@@ -32,6 +35,13 @@ public class WebRestController {
 		model.addAttribute("name", name);
 		return "greeting";
 	}*/
+	
+	@GetMapping("/profile")
+	public String getProfile () {
+		return Arrays.stream(env.getActiveProfiles())
+				.findFirst()
+				.orElse("");
+	}
 	
 	@PostMapping("/posts")
 	public Long savePosts(@RequestBody PostsSaveRequestDto dto) {
