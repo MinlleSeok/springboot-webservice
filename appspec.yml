@@ -12,5 +12,5 @@ permissions:
       - file
 hooks:
   AfterInstall:
-    - location: Scripts/execute-deploy.sh
+    - location: /home/ec2-user/app/travis/build/Scripts/execute-deploy.sh
       timeout: 180
