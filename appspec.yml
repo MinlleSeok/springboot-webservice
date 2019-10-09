@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/ec2-user/app/travis/build/
 permissions:
-  - object: /home/ec2-user/app/travis/build/Scripts
+  - object: Scripts
     pattern: "**"
     owner: ec2-user
     mode: 755
@@ -12,5 +12,5 @@ permissions:
       - file
 hooks:
   AfterInstall:
-    - location: /home/ec2-user/app/travis/build/Scripts/execute-deploy.sh
+    - location: Scripts/execute-deploy.sh
       timeout: 180
