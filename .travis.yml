@@ -33,7 +33,7 @@ deploy:
     acl: public_read
     wait-until-deployed: true
     on:
-      repo: MinlleSeok/calendar #Github 주소
+      repo: MinlleSeok/springboot-webservice #Github 주소
       branch: master
       
   - provider: codedeploy
@@ -47,7 +47,7 @@ deploy:
     region: ap-northeast-2
     wait-until-deployed: true
     on:
-      repo: MinlleSeok/calendar
+      repo: MinlleSeok/springboot-webservice
       branch: master
       
 # CI 실행 완료시 메일로 알람
