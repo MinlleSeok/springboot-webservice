@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/ec2-user/app/travis/build/
 permissions:
-  - object: Scripts/execute-deploy.sh
+  - object: /home/ec2-user/app/travis/build/Scripts/execute-deploy.sh
     mode: 644
 hooks:
   AfterInstall:
